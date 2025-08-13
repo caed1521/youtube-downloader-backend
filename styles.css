@@ -1,0 +1,527 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0D0D0D;
+    color: #FFFFFF;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background-color: rgba(13, 13, 13, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(229, 9, 20, 0.1);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20px;
+}
+
+.logo h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #E50914;
+    text-shadow: 0 0 20px rgba(229, 9, 20, 0.3);
+}
+
+.contact-btn {
+    background: transparent;
+    border: 2px solid #E50914;
+    color: #E50914;
+    padding: 0.5rem 1.5rem;
+    border-radius: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.contact-btn:hover {
+    background: #E50914;
+    color: #FFFFFF;
+    box-shadow: 0 4px 20px rgba(229, 9, 20, 0.3);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+    background: linear-gradient(135deg, #0D0D0D 0%, #1A0A0A 100%);
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #FFFFFF 0%, #E50914 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 4px 20px rgba(229, 9, 20, 0.2);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #B3B3B3;
+    margin-bottom: 3rem;
+    font-weight: 400;
+}
+
+/* Download Form */
+.download-form {
+    background: rgba(31, 31, 31, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(229, 9, 20, 0.1);
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.url-input {
+    width: 100%;
+    padding: 1rem 3rem 1rem 1rem;
+    background: rgba(13, 13, 13, 0.8);
+    border: 2px solid rgba(179, 179, 179, 0.2);
+    border-radius: 16px;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.url-input:focus {
+    outline: none;
+    border-color: #E50914;
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.2);
+}
+
+.url-input::placeholder {
+    color: #B3B3B3;
+}
+
+.input-icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #B3B3B3;
+    pointer-events: none;
+}
+
+/* Format Selector */
+.format-selector {
+    margin-bottom: 2rem;
+}
+
+.radio-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 1rem 1.5rem;
+    background: rgba(13, 13, 13, 0.6);
+    border: 2px solid rgba(179, 179, 179, 0.2);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    flex: 1;
+    max-width: 200px;
+}
+
+.radio-option:hover {
+    border-color: rgba(229, 9, 20, 0.5);
+    background: rgba(229, 9, 20, 0.1);
+}
+
+.radio-option input[type="radio"] {
+    display: none;
+}
+
+.radio-custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #B3B3B3;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.radio-option input[type="radio"]:checked + .radio-custom {
+    border-color: #E50914;
+    background: #E50914;
+}
+
+.radio-option input[type="radio"]:checked + .radio-custom::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: #FFFFFF;
+    border-radius: 50%;
+}
+
+.radio-text {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+}
+
+.radio-option input[type="radio"]:checked ~ .radio-text {
+    color: #E50914;
+}
+
+/* Quality Selector */
+.quality-selector {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.quality-selector label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #B3B3B3;
+}
+
+.quality-dropdown {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(13, 13, 13, 0.8);
+    border: 2px solid rgba(179, 179, 179, 0.2);
+    border-radius: 16px;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.quality-dropdown:focus {
+    outline: none;
+    border-color: #E50914;
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.2);
+}
+
+.quality-dropdown option {
+    background: #1F1F1F;
+    color: #FFFFFF;
+    padding: 0.5rem;
+}
+
+/* Download Button */
+.download-btn, .final-download-btn {
+    width: 100%;
+    padding: 1.2rem 2rem;
+    background: linear-gradient(135deg, #E50914 0%, #B8070F 100%);
+    border: none;
+    border-radius: 16px;
+    color: #FFFFFF;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(229, 9, 20, 0.3);
+}
+
+.download-btn:hover:not(:disabled), .final-download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(229, 9, 20, 0.4);
+}
+
+.download-btn:disabled {
+    background: rgba(179, 179, 179, 0.3);
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Status Section */
+.status-section {
+    padding: 4rem 0;
+    background: rgba(31, 31, 31, 0.5);
+}
+
+.status-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.status-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.1rem;
+    color: #B3B3B3;
+    margin-bottom: 2rem;
+}
+
+/* Progress Bar */
+.progress-container {
+    margin: 2rem 0;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(179, 179, 179, 0.2);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(135deg, #E50914 0%, #B8070F 100%);
+    border-radius: 16px;
+    width: 0%;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px rgba(229, 9, 20, 0.3);
+}
+
+.progress-text {
+    font-size: 0.9rem;
+    color: #B3B3B3;
+    font-weight: 500;
+}
+
+.loading-spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid rgba(229, 9, 20, 0.3);
+    border-top: 3px solid #E50914;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.video-preview {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: rgba(31, 31, 31, 0.8);
+    padding: 1.5rem;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.video-preview img {
+    width: 120px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.video-info h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #FFFFFF;
+}
+
+.video-info p {
+    color: #B3B3B3;
+    font-size: 0.9rem;
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 6rem 0;
+    background: rgba(13, 13, 13, 0.8);
+}
+
+.section-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #FFFFFF;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.faq-item {
+    background: rgba(31, 31, 31, 0.8);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(229, 9, 20, 0.1);
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: rgba(229, 9, 20, 0.3);
+    box-shadow: 0 8px 25px rgba(229, 9, 20, 0.1);
+}
+
+.faq-item h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #E50914;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.faq-item p {
+    color: #B3B3B3;
+    line-height: 1.7;
+}
+
+/* Legal Section */
+.legal-section {
+    padding: 4rem 0;
+    background: rgba(31, 31, 31, 0.9);
+}
+
+.legal-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.legal-content p {
+    color: #B3B3B3;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .download-form {
+        padding: 2rem;
+        margin: 0 1rem;
+    }
+    
+    .radio-group {
+        flex-direction: column;
+    }
+    
+    .radio-option {
+        max-width: none;
+    }
+    
+    .video-preview {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .download-form {
+        padding: 1.5rem;
+    }
+    
+    .url-input, .download-btn, .final-download-btn {
+        padding: 1rem;
+    }
+    
+    .radio-option {
+        padding: 0.8rem 1rem;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Hidden class for JavaScript */
+.hidden {
+    display: none !important;
+}
+
+/* Success state */
+.success {
+    border-color: #28a745 !important;
+    box-shadow: 0 0 20px rgba(40, 167, 69, 0.2) !important;
+}
+
+/* Error state */
+.error {
+    border-color: #dc3545 !important;
+    box-shadow: 0 0 20px rgba(220, 53, 69, 0.2) !important;
+}
